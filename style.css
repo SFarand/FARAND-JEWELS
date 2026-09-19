@@ -854,3 +854,20 @@ img {
 .fa{
     color: #9d7839;
 }
+
+
+.dark .dark-bg-body-dark{
+  background: url(images/bg-dark.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+}
+.lh-0{
+    line-height: 0;
+}
+.darkmode-switch{
+    width: 2.5rem !important;
+    height: 1.5rem !important;
+}
+.dark .dark-text-white{
+    color: white !important;
+}
