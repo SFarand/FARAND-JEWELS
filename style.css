@@ -1,0 +1,849 @@
+ /* =========================
+   FARAND JEWELS
+   LUXURY JEWELRY WEBSITE
+========================= */
+
+
+/* =========================
+   ROOT
+========================= */
+
+:root {
+    --brown-dark: #1c100b;
+    --brown: #2b1810;
+    --brown-light: #4a2b1d;
+
+    --gold: #c9a45c;
+    --gold-light: #e4c47b;
+    --gold-dark: #9d7839;
+
+    --cream: #f4ead8;
+    --white: #ffffff;
+
+    --text: #e9dfd0;
+    --muted: #a99c8d;
+
+    --border: rgba(201, 164, 92, 0.25);
+
+    --shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+
+    --gold-shadow:
+        0 15px 40px rgba(201, 164, 92, 0.18);
+
+    --transition: 0.4s ease;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(201, 164, 92, 0.08),
+            transparent 35%
+        ),
+        var(--brown-dark);
+
+    color: var(--text);
+    overflow-x: hidden;
+    transition: background 0.5s ease,
+                color 0.5s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--brown-dark);
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--brown-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-dark);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.luxury-navbar {
+    padding: 18px 0;
+
+    background:
+        rgba(28, 16, 11, 0.72);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid rgba(201, 164, 92, 0.18);
+
+    transition: 0.4s ease;
+
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-family: "Cinzel", serif;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: var(--cream) !important;
+}
+
+.navbar-brand span {
+    color: var(--gold);
+}
+
+.navbar-nav {
+    gap: 8px;
+}
+
+.nav-link {
+    position: relative;
+
+    color: #e9dfd0 !important;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+
+    padding: 10px 14px !important;
+
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 1px;
+
+    left: 50%;
+    bottom: 3px;
+
+    background: var(--gold);
+
+    transform: translateX(-50%);
+
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--gold-light) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 55%;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.luxury-dropdown {
+    background:
+        rgba(43, 24, 16, 0.97);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 10px;
+
+    box-shadow: var(--shadow);
+}
+
+.luxury-dropdown .dropdown-item {
+    color: var(--cream);
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    transition: var(--transition);
+}
+
+.luxury-dropdown .dropdown-item:hover {
+    color: var(--brown-dark);
+
+    background: var(--gold);
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-btn {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background:
+        rgba(201, 164, 92, 0.08);
+
+    color: var(--gold);
+
+    transition: var(--transition);
+}
+
+.theme-btn:hover {
+    background: var(--gold);
+    color: var(--brown-dark);
+
+    transform: rotate(25deg);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-section {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        url(./image/p.jpg);
+
+    background-size: cover;
+    background-position: center;
+
+    isolation: isolate;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(24, 12, 8, 0.94) 0%,
+            rgba(28, 15, 10, 0.76) 45%,
+            rgba(28, 15, 10, 0.25) 100%
+        );
+
+    z-index: -1;
+}
+
+.hero-content {
+    padding-top: 80px;
+}
+
+.hero-small-title {
+    color: var(--gold);
+
+    font-size: 13px;
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    max-width: 750px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: 1.12;
+
+    color: var(--cream);
+
+    margin-bottom: 25px;
+}
+
+#typed {
+    color: var(--gold);
+
+    display: inline;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    color: #d0c2b1;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.luxury-btn {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold-dark)
+        );
+
+    color: var(--brown-dark) !important;
+
+    border: none;
+
+    padding: 13px 28px;
+
+    border-radius: 4px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 10px 30px rgba(201, 164, 92, 0.2);
+
+    transition: var(--transition);
+}
+
+.luxury-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(201, 164, 92, 0.35);
+}
+
+.luxury-outline-btn {
+    color: var(--gold-light) !important;
+
+    border:
+        1px solid var(--gold-dark);
+
+    background:
+        rgba(201, 164, 92, 0.05);
+
+    backdrop-filter: blur(8px);
+
+    padding: 12px 27px;
+
+    border-radius: 4px;
+
+    transition: var(--transition);
+}
+
+.luxury-outline-btn:hover {
+    color: var(--brown-dark) !important;
+
+    background: var(--gold);
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--gold-shadow);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section-padding {
+    padding: 110px 0;
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.gold-subtitle {
+    color: var(--gold);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 14px;
+}
+
+.section-heading h2 {
+    font-family: "Cinzel", serif;
+
+    color: var(--cream);
+
+    font-size: clamp(32px, 5vw, 52px);
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-description {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    background:
+        linear-gradient(
+            180deg,
+            var(--brown-dark),
+            #24140d
+        );
+}
+
+.about-image {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    box-shadow: var(--shadow);
+}
+
+.about-image img {
+    width: 100%;
+
+    min-height: 550px;
+
+    object-fit: cover;
+
+    transition: 0.7s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.06);
+}
+
+.about-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 18px;
+
+    border:
+        1px solid rgba(228, 196, 123, 0.45);
+
+    pointer-events: none;
+}
+
+.about-badge {
+    position: absolute;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 95px;
+    height: 95px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(28, 16, 11, 0.86);
+
+    border:
+        1px solid var(--gold);
+
+    backdrop-filter: blur(10px);
+
+    color: var(--gold);
+
+    z-index: 2;
+}
+
+.about-badge span {
+    font-family: "Cinzel", serif;
+
+    font-size: 32px;
+}
+
+.about-badge small {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.about-text {
+    color: var(--muted);
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.feature-item {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 15px 0;
+}
+
+.feature-item i {
+    color: var(--gold);
+
+    font-size: 25px;
+}
+
+.feature-item h5 {
+    color: var(--cream);
+
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    color: var(--muted);
+
+    margin: 0;
+
+    font-size: 13px;
+}
+
+.text-gold-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--gold);
+
+    margin-top: 20px;
+
+    transition: var(--transition);
+}
+
+.text-gold-link:hover {
+    color: var(--gold-light);
+
+    gap: 16px;
+}
+
+
+/* =========================
+   COLLECTIONS
+========================= */
+
+.collections-section {
+    background:
+        #21120c;
+}
+
+
+/* =========================
+   JEWELRY CARD
+========================= */
+
+.jewelry-card {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(74, 43, 29, 0.48),
+            rgba(28, 16, 11, 0.8)
+        );
+
+    border:
+        1px solid rgba(201, 164, 92, 0.14);
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border 0.45s ease;
+}
+
+.jewelry-card:hover {
+    transform: translateY(-12px);
+
+    border-color:
+        rgba(201, 164, 92, 0.55);
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.6),
+        0 10px 30px rgba(201, 164, 92, 0.12);
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.card-image {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 390px;
+
+    background: #302017;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+.jewelry-card:hover .card-image img {
+    transform: scale(1.09);
+
+    filter:
+        brightness(0.78)
+        saturate(1.08);
+}
+
+
+/* =========================
+   CARD OVERLAY
+========================= */
+
+.card-overlay {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: 0.4s ease;
+}
+
+.jewelry-card:hover .card-overlay {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.card-overlay a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    color: var(--brown-dark);
+
+    background: var(--gold);
+
+    transition: 0.3s ease;
+}
+
+.card-overlay a:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.category-label {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 6px 12px;
+
+    background: var(--gold);
+
+    color: var(--brown-dark);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    border-radius: 2px;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content p {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.card-content h3 {
+    font-family: "Cinzel", serif;
+
+    font-size: 23px;
+
+    color: var(--cream);
+
+    margin-bottom: 12px;
+}
+
+.price {
+    color: var(--gold-light);
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   LUXURY BANNER
+========================= */
+
+.luxury-banner {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+
+    background-attachment: fixed;
+}
+
+.luxury-banner-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 13, 8, 0.94),
+            rgba(25, 13, 8, 0.5),)
+}
